@@ -1,0 +1,7 @@
+* mordal
+*get data on mongoDB
+*edit data on mongoDB
+*dynamic route
+*image load
+*fullstack project deploy on vercel
+*accordion
