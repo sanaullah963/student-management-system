@@ -8,16 +8,18 @@ import axios from "axios";
 export default function AddNotic() {
   // useState
   const [description, setDescription] = useState("");
+  const [headline, setHeadline] = useState("");
 
   // handel button
   const submitHandel = (e) => {
     e.preventDefault();
-    if (!description) {
+    if (!description | !headline) {
       toast.error("All Fild Are requier");
     } else {
       // input data object
       const NoticeData = {
         description,
+        headline,
       };
       // console.log(NoticeData);
       axios
@@ -29,14 +31,26 @@ export default function AddNotic() {
           console.log(error);
         });
     }
+    setHeadline('')
     setDescription('')
   };
   return (
     <Container>
       {/* form section */}
       <form className="max-w-[450px] bg-gray-100 px-5 pb-14 grid grid-cols-1 gap-y-4 md:mt-24 mb-24 mt-5 mx-auto rounded-md">
-        <PageHeadding headding={"add notic"} className={""} />
-        {/* text-area */}
+        <PageHeadding headding={"add notic"} />
+        {/* headline */}
+        <div>
+          <label className="font-semibold text-lg capitalize">
+            notice headline :
+          </label>
+          <input type="text"
+            placeholder="Notice Headline"
+            onInput={(e) => setHeadline(e.target.value)}
+            className="w-full border-2 border-gray-400 rounded-md p-2 focus:outline-sky-400 mt-2"
+            value={headline}
+          ></input>
+        </div>
         <div>
           <label className="font-semibold text-lg capitalize">
             notice description :

@@ -5,5 +5,9 @@ const noticSchema=mongoose.Schema({
     type:String,
     require:[true,'description is requier']
   },
+  headline:{
+    type:String,
+    require:[true,'HeadLine is requier']
+  },
 })
 module.exports=mongoose.model('notice',noticSchema)

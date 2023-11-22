@@ -90,10 +90,10 @@ app.post("/teacher", async (req, res) => {
 
 // notice post route 
 app.post('/notice',async(req,res)=>{
-  const {description} = await req.body
-  console.log(description);
+  const {description,headline} = await req.body
   const newNotic = new notice({
-    description
+    headline,
+    description,
   })
   newNotic.save()
   return(

@@ -1,8 +1,11 @@
+import Announcement from '@/components/Announcement'
 import React from 'react'
 
 function page() {
   return (
-    <div>announcement page</div>
+    <main>
+      <Announcement/>
+    </main>
   )
 }
 
