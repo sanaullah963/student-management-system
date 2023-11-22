@@ -97,7 +97,6 @@ function AddTeacher() {
             <option value="teacher">Teacher</option>
           </select>
         </div>
-
         {/* address */}
         <div className="flex flex-col gap-y-1">
           <label className="font-semibold text-lg">Address :</label>
@@ -108,7 +107,6 @@ function AddTeacher() {
             className="border border-gray-400 rounded-md h-10 px-3 focus:outline-sky-400"
           />
         </div>
-
         {/* number */}
         <div className="flex flex-col gap-y-1">
           <label className="font-semibold text-lg">Number :</label>

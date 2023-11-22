@@ -8,7 +8,7 @@ function MainContent({children}) {
       {/* <Header/> */}
       <Container>
       <div className="flex h-screen w-full fixed ">
-        <div className="w-[180px]  overflow-y-scroll scrollbarr-hidden">
+        <div className="w-[190px]  overflow-y-scroll scrollbarr-hidden">
           <Header />
         </div>
         <div className="flex-1 overflow-y-scroll mx-4">

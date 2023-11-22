@@ -5,11 +5,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const student = require("./module/student");
 const teacher = require("./module/teacher");
+const notice = require('./module/notice')
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 console.log("................................");
+
 // running server
 app.listen(8000, () => {
   console.log("server is running in port " + process.env.PORT);
@@ -25,10 +27,12 @@ const connect = async () => {
   }
 };
 connect();
-// create route
+
+// create a get route
 app.get("/", (req, res) => {
   res.send("hello");
 });
+
 // post route
 // student post route
 app.post("/student", async (req, res) => {
@@ -80,6 +84,19 @@ app.post("/teacher", async (req, res) => {
     secendNuber,
   });
 
-  newTeacher.save()
+  newTeacher.save();
   return res.send("Teacher Added Successfully");
 });
+
+// notice post route 
+app.post('/notice',async(req,res)=>{
+  const {description} = await req.body
+  console.log(description);
+  const newNotic = new notice({
+    description
+  })
+  newNotic.save()
+  return(
+    res.send('notice added successfull')
+  )
+})
