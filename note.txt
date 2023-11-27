@@ -1,7 +1,9 @@
-* mordal
+* how to create mordal
 *get data on mongoDB
-*edit data on mongoDB
+*edit data on mongoDB //manage mongoDB data
 *dynamic route
 *image load
 *fullstack project deploy on vercel
 *accordion
+*object mathod (parsonal stady)
+*mongoss finde mathod stasy

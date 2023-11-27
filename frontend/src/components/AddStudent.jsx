@@ -91,7 +91,6 @@ function AddStudent() {
           {/* technology */}
           <div className="flex flex-col gap-y-1">
             <label className="font-semibold text-lg">Technology Name :</label>
-
             <select
               className="border border-gray-400 rounded-md h-10 px-3 focus:outline-sky-400"
               onInput={(e) => setTechnology(e.target.value)}
@@ -188,14 +187,14 @@ function AddStudent() {
               onInput={(e) => setSection(e.target.value)}
             >
               <option>Select Your Section</option>
-              <option value="2015-2016">2015-2016</option>
-              <option value="2016-2017">2016-2017</option>
-              <option value="2017-2018">2017-2018</option>
-              <option value="2018-2019">2018-2019</option>
-              <option value="2019-2020">2019-2020</option>
-              <option value="2020-2021">2020-2021</option>
-              <option value="2021-2022">2021-2022</option>
-              <option value="2022-2023">2022-2023</option>
+              <option value="15-16">15-16</option>
+              <option value="16-17">16-17</option>
+              <option value="17-18">17-18</option>
+              <option value="18-19">18-19</option>
+              <option value="19-20">19-20</option>
+              <option value="20-21">20-21</option>
+              <option value="21-22">21-22</option>
+              <option value="22-23">22-23</option>
             </select>
           </div>
           {/* image section */}

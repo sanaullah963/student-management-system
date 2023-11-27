@@ -47,6 +47,7 @@ app.get("/students", async (req, res) => {
 app.get("/teachers", async (req, res) => {
   try {
     const teachers = await teacher.find();
+    
     res.send(teachers);
   } catch (error) {
     console.log("get mongoDB data to teachers route error : ", error);

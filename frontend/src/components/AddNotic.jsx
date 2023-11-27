@@ -7,6 +7,7 @@ import axios from "axios";
 
 export default function AddNotic() {
   // useState
+
   const [description, setDescription] = useState("");
   const [headline, setHeadline] = useState("");
 
@@ -21,7 +22,6 @@ export default function AddNotic() {
         description,
         headline,
       };
-      // console.log(NoticeData);
       axios
         .post("http://localhost:8000/notice", NoticeData)
         .then((res) => {
@@ -34,6 +34,7 @@ export default function AddNotic() {
     setHeadline('')
     setDescription('')
   };
+
   return (
     <Container>
       {/* form section */}
