@@ -34,6 +34,7 @@ const connect = async () => {
 };
 connect();
 
+// ------------post route
 // student get route
 app.get("/students", async (req, res) => {
   try {
@@ -63,6 +64,8 @@ app.get("/notices", async (req, res) => {
   }
 });
 
+
+// ------------post route
 // student post route
 app.post("/student", async (req, res) => {
   // destracture std data data
@@ -125,3 +128,18 @@ app.post("/notice", async (req, res) => {
   newNotic.save();
   return res.send("notice added successfull");
 });
+// delete student post route
+app.post("/delete", async(req,res)=>{
+  const {id,collection}= await req.body;
+  collection == 'student' && await student.findByIdAndDelete(id);
+  collection == 'teacher' && await teacher.findByIdAndDelete(id);
+
+  // collection == 'student' && await student.findByIdAndDelete(id);
+  // collection == 'teacher' && res.send('Teacher delete successfull')
+  res.send(` ${collection} delete successfull `)
+
+  
+
+  
+})
+
