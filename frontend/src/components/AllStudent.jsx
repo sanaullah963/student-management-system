@@ -6,6 +6,7 @@ import PageHeadding from "./PageHeadding";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { VscPreview } from "react-icons/vsc";
+import Modal from "./Modal";
 
 // main function
 function AllStudent() {
@@ -14,8 +15,7 @@ function AllStudent() {
   axios
     .get("http://localhost:8000/students")
     .then((res) => setstudentdata(res.data));
-
-  // -------search button handel
+  //---------search button handel
   const [seachInput, setSearchInput] = useState("");
   let dataArray = [];
   const [searshResult, setSearshResult] = useState([]);
@@ -40,20 +40,14 @@ function AllStudent() {
     }
     setSearchInput("");
   };
-  //----------delet student item
-  const [deletId, setDeletId] = useState("");
-
-  // axios.post('http://localhost:8000/deletstudent',)
-  // .then(res=>{
-  //   console.log(res);
-  // })
-  // .catch(error => {
-  //   console.log(error);
-  // })
-  // console.log(deletID.id);
+  //----------modal
+  const [modalData, setModalData] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = () => setShowModal(false);
 
   return (
     <Container>
+      {showModal && <Modal closeModal={closeModal} modalData={modalData} DBcollection={'student'} />}
       <PageHeadding headding={"all Student list"} />
       <div className="w-full  mb-10">
         {/*-----------search section */}
@@ -79,6 +73,7 @@ function AllStudent() {
             Total student : {totalSudent}
           </h2>
         </div>
+        
         <div className="flex bg-slate-100 uppercase ">
           <table className="w-full">
             {/* teble headding */}
@@ -104,7 +99,11 @@ function AllStudent() {
                       } `}
                     >
                       <td className="border border-x-gray-500">
-                        <button>
+                        <button
+                          onClick={() => (
+                            setShowModal(true), setModalData(data)
+                          )}
+                        >
                           <VscPreview />
                         </button>
                       </td>
@@ -127,7 +126,7 @@ function AllStudent() {
                               .catch((error) => console.log(error))
                           }
                         >
-                          delet
+                          delete
                         </button>
                         <button className="px-2 py-1 bg-green-600 rounded-md text-white">
                           more
@@ -144,7 +143,9 @@ function AllStudent() {
                       } `}
                     >
                       <td className="border border-x-gray-500">
-                        <button>
+                        <button onClick={() => (
+                            setShowModal(true), setModalData(data)
+                          )}>
                           <VscPreview />
                         </button>
                       </td>

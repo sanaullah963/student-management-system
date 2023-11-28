@@ -6,6 +6,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { FaSearch } from "react-icons/fa";
 import { VscPreview } from "react-icons/vsc";
+import Modal from "./Modal";
 
 function Teacher() {
   const [teachers, setTeachers] = useState([]);
@@ -39,9 +40,14 @@ function Teacher() {
     }
     setSearchInput("");
   };
-
+  //----------modal
+  const [modalData, setModalData] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = () => setShowModal(false);
   return (
     <Container>
+      {/* -----modal data */}
+      {showModal && <Modal closeModal={closeModal} modalData={modalData}   DBcollection={'teacher'} />}
       <div className="w-full">
         <PageHeadding headding={"all teacher"} />
         {/*-----------search section */}
@@ -82,13 +88,16 @@ function Teacher() {
           <tbody className="text-center">
             {/* -----conditional rendaring */}
             {searshResult == ""
+            // all time shit
               ? teachers.map((data, index) => (
                   <tr
                     key={data._id}
                     className={` h-14 ${index % 2 && "bg-gray-300"} `}
                   >
                     <td className="border border-x-gray-500">
-                      <button>
+                      <button onClick={() => (
+                            setShowModal(true), setModalData(data)
+                          )}>
                         <VscPreview />
                       </button>
                     </td>
@@ -118,13 +127,16 @@ function Teacher() {
                     </td>
                   </tr>
                 ))
+                // search resalt shit
               : searshResult.map((data, index) => (
                   <tr
                     key={data._id}
                     className={` h-14 ${index % 2 && "bg-gray-300"} `}
                   >
                     <td className="border border-x-gray-500">
-                      <button>
+                      <button onClick={() => (
+                            setShowModal(true), setModalData(data)
+                          )}>
                         <VscPreview />
                       </button>
                     </td>

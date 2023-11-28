@@ -7,7 +7,7 @@ function MainContent({children}) {
     <main>
       {/* <Header/> */}
       <Container>
-      <div className="flex h-screen w-full fixed ">
+      <div className="flex h-screen w-full fixed">
         <div className="w-[190px]  overflow-y-scroll scrollbarr-hidden">
           <Header />
         </div>
