@@ -9,5 +9,9 @@ const noticSchema=mongoose.Schema({
     type:String,
     require:[true,'HeadLine is requier']
   },
+  fullDate:{
+    type:String,
+    require:[true,'Date is requier']
+  },
 })
 module.exports=mongoose.model('notice',noticSchema)

@@ -120,10 +120,11 @@ app.post("/teacher", async (req, res) => {
 });
 // notice post route
 app.post("/notice", async (req, res) => {
-  const { description, headline } = await req.body;
+  const { description, headline,fullDate } = await req.body;
   const newNotic = new notice({
     headline,
     description,
+    fullDate,
   });
   newNotic.save();
   return res.send("notice added successfull");

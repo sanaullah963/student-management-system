@@ -4,16 +4,17 @@ import Container from "./Container";
 import PageHeadding from "./PageHeadding";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-
+// main function
 export default function AddNotic() {
   // useState
-
   const [description, setDescription] = useState("");
   const [headline, setHeadline] = useState("");
-
-  // handel button
+  //----------handel button
   const submitHandel = (e) => {
     e.preventDefault();
+    // get date
+    const date = new Date(); 
+    const fullDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
     if (!description | !headline) {
       toast.error("All Fild Are requier");
     } else {
@@ -21,18 +22,19 @@ export default function AddNotic() {
       const NoticeData = {
         description,
         headline,
+        fullDate,
       };
       axios
         .post("http://localhost:8000/notice", NoticeData)
         .then((res) => {
-          toast.success(res.data)
+          toast.success(res.data);
         })
         .catch((error) => {
           console.log(error);
         });
     }
-    setHeadline('')
-    setDescription('')
+    setHeadline("");
+    setDescription("");
   };
 
   return (
@@ -40,12 +42,14 @@ export default function AddNotic() {
       {/* form section */}
       <form className="max-w-[450px] bg-gray-100 px-5 pb-14 grid grid-cols-1 gap-y-4 md:mt-24 mb-24 mt-5 mx-auto rounded-md">
         <PageHeadding headding={"add notic"} />
+        {/* <button onClick={time}>click</button> */}
         {/* headline */}
         <div>
           <label className="font-semibold text-lg capitalize">
             notice headline :
           </label>
-          <input type="text"
+          <input
+            type="text"
             placeholder="Notice Headline"
             onInput={(e) => setHeadline(e.target.value)}
             className="w-full border-2 border-gray-400 rounded-md p-2 focus:outline-sky-400 mt-2"
