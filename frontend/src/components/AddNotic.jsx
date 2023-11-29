@@ -25,7 +25,7 @@ export default function AddNotic() {
         fullDate,
       };
       axios
-        .post("http://localhost:8000/notice", NoticeData)
+        .post("https://student-management-system-backend-eight.vercel.app/notice", NoticeData)
         .then((res) => {
           toast.success(res.data);
         })
