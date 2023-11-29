@@ -13,7 +13,7 @@ function AllStudent() {
   //----------get mathod
   const [studentData, setstudentdata] = useState([]);
   axios
-    .get("http://localhost:8000/students")
+    .get("https://student-management-system-backend-eight.vercel.app/students")
     .then((res) => setstudentdata(res.data));
   //---------search button handel
   const [seachInput, setSearchInput] = useState("");
@@ -118,7 +118,7 @@ function AllStudent() {
                           className="px-2 py-1 bg-red-600 rounded-md text-white"
                           onClick={() =>
                             axios
-                              .post("http://localhost:8000/delete", {
+                              .post("https://student-management-system-backend-eight.vercel.app/delete", {
                                 id: data._id,
                                 collection: "student",
                               })
@@ -160,7 +160,7 @@ function AllStudent() {
                           className="px-2 py-1 bg-red-600 rounded-md text-white"
                           onClick={() =>
                             axios
-                              .post("http://localhost:8000/delete", {
+                              .post("https://student-management-system-backend-eight.vercel.app/delete", {
                                 id: data._id,
                                 collection: "student",
                               })
