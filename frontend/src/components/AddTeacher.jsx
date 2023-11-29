@@ -38,7 +38,7 @@ function AddTeacher() {
         secendNuber,
       };
       axios
-        .post("http://localhost:8000/teacher", teacherData)
+        .post("https://student-management-system-backend-eight.vercel.app/teacher", teacherData)
         .then((res) => {
           toast.success(res.data)
         })
