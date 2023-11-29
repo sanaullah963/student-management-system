@@ -11,7 +11,7 @@ import Modal from "./Modal";
 function Teacher() {
   const [teachers, setTeachers] = useState([]);
   axios
-    .get("http://localhost:8000/teachers")
+    .get("https://student-management-system-backend-eight.vercel.app/teachers")
     .then((res) => setTeachers(res.data));
 
   // -------search button handel
@@ -114,7 +114,7 @@ function Teacher() {
                         className="px-2 py-1 bg-red-600 rounded-md text-white"
                         onClick={() =>
                           axios
-                            .post("http://localhost:8000/delete", {
+                            .post("https://student-management-system-backend-eight.vercel.app/delete", {
                               id: data._id,
                               collection: "teacher",
                             })
@@ -153,7 +153,7 @@ function Teacher() {
                         className="px-2 py-1 bg-red-600 rounded-md text-white"
                         onClick={() =>
                           axios
-                            .post("http://localhost:8000/delete", {
+                            .post("https://student-management-system-backend-eight.vercel.app/delete", {
                               id: data._id,
                               collection: "teacher",
                             })
