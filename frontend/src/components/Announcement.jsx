@@ -11,7 +11,7 @@ function Announcement() {
   const [notices, setNotices] = useState([]);
   const [noticeId, setNoticeId] = useState("0");
   //----------get mathod
-  axios.get("http://localhost:8000/notices").then((res) => {
+  axios.get("https://student-management-system-backend-eight.vercel.app/notices").then((res) => {
     setNotices(res.data);
   });
 
