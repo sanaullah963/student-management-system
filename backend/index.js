@@ -10,7 +10,11 @@ const notice = require("./module/notice");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://student-management-system-iota-ruddy.vercel.app",
+  })
+);
 console.log("................................");
 
 // root route
