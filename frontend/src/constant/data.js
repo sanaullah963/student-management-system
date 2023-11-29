@@ -19,30 +19,9 @@ import { FcContacts } from "react-icons/fc";
 import { TfiAnnouncement } from "react-icons/tfi";
 export const dashbordArray = [
   {
-    icon: FaUserGraduate,
-    titel: "all student",
-    url: "/all-student",
-    iconColor: "text-red-500",
-    bgColor: "#FF8F8F",
-  },
-  {
     icon: FaUserPlus,
     titel: "Add New Student",
     url: "/add-student",
-    iconColor: "text-red-500",
-    bgColor: "FF8F8F",
-  },
-  {
-    icon: TfiAnnouncement,
-    titel: "announcement",
-    url: "/announcement",
-    iconColor: "text-red-500",
-    bgColor: "FF8F8F",
-  },
-  {
-    icon: FaUsersLine,
-    titel: "all teacher",
-    url: "/all-teacher",
     iconColor: "text-red-500",
     bgColor: "FF8F8F",
   },

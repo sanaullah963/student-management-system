@@ -2,10 +2,12 @@ import React from "react";
 import Container from "./Container";
 import Link from "next/link";
 import { dashbordArray } from "@/constant/data";
+import PageHeadding from "./PageHeadding";
 export default function Dashbord() {
   return (
     <main>
       <Container className={"mt-24"}>
+        <PageHeadding headding={'our dashbord'}/>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-10">
           {/* item-1 */}
           {dashbordArray.map((e, index) => (
