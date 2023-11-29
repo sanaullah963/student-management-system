@@ -54,7 +54,7 @@ function AddStudent() {
         section,
       };
       axios
-        .post("http://localhost:8000/student", stdData)
+        .post("https://student-management-system-backend-eight.vercel.app/student", stdData)
         .then((res) => {
           toast.success(res.data)
         })
