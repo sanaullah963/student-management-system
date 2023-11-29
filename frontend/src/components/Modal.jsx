@@ -62,7 +62,7 @@ export default function Modal({
             className="bg-red-600 rounded-md text-white py-2 px-3 mt-4"
             onClick={() =>
               axios
-                .post(`http://localhost:8000/delete`, {
+                .post(`https://student-management-system-backend-eight.vercel.app/delete`, {
                   id: modalData._id,
                   collection: DBcollection,
                 })
