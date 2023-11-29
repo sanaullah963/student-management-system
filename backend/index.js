@@ -24,13 +24,13 @@ app.get("/", (req, res) => {
 
 // running server
 app.listen(8000, () =>
-  console.log("server is running in port " + process.env.PORT)
+  console.log("server is running in port " + 8000)
 );
 
 // connect mongoDB
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect("mongodb+srv://student:adminadmin@cluster0.5bm3gwx.mongodb.net/?retryWrites=true&w=majority");
     console.log("mongoDB is connected");
   } catch (error) {
     console.log("mongoDB connetn error : ", error);
