@@ -3,12 +3,12 @@ import { MdSpaceDashboard } from "react-icons/md";
 export const headerArray = [
   { titel: "dashbord", url: "/dashbord",icon:MdSpaceDashboard, },
   { titel: "all student", url: "/all-student",icon:FaUserGraduate , },
-  { titel: "add student", url: "/add-student",icon:FaUserPlus ,},
+  // { titel: "add student", url: "/add-student",icon:FaUserPlus ,},
   { titel: "teacher", url: "/teacher",icon:FaUsersLine ,},
-  { titel: "add teacher", url: "/add-teacher",icon:FaUserTie ,},
-  { titel: "add notic", url: "/add-notic",icon:IoIosNotifications , },
+  // { titel: "add teacher", url: "/add-teacher",icon:FaUserTie ,},
+  // { titel: "add notic", url: "/add-notic",icon:IoIosNotifications , },
   { titel: "announcement", url: "/announcement",icon:TfiAnnouncement , },
-  { titel: "result", url: "/result",icon:FaUserGraduate , },
+  // { titel: "result", url: "/result",icon:FaUserGraduate , },
   { titel: "profile", url: "/profile",icon:FaUserGraduate , },
 ];
 // dashbord array
@@ -39,11 +39,11 @@ export const dashbordArray = [
     iconColor: "text-red-500",
     bgColor: "FF8F8F",
   },
-  {
-    icon: FcContacts,
-    titel: "contact",
-    url: "/contact",
-    iconColor: "text-red-500",
-    bgColor: "FF8F8F",
-  },
+  // {
+  //   icon: FcContacts,
+  //   titel: "contact",
+  //   url: "/contact",
+  //   iconColor: "text-red-500",
+  //   bgColor: "FF8F8F",
+  // },
 ];

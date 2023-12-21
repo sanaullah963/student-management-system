@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const pathName=usePathname()
   return (
-    <main className=" flex items-center my-8">
+    <main className=" flex items-center my-8 ">
       <ul className="w-full flex flex-col gap-y-2 bg-gray-200 px-4 py-6 rounded-md">
         {headerArray.map((e, index) => (
           <Link href={e.url} key={index}>

@@ -19,6 +19,8 @@ function AllStudent() {
   const [seachInput, setSearchInput] = useState("");
   let dataArray = [];
   const [searshResult, setSearshResult] = useState([]);
+
+
   const totalSudent = studentData.length;
   const searchHandel = (e) => {
     e.preventDefault();

@@ -1,9 +1,12 @@
 
+import HomePage from "@/components/HomePage";
+import Login from "@/components/Login";
 
 export default function Home() {
   return (
    <main>
-    <p>thie is root page.jsx</p>
+    <HomePage/>
+    <Login/>
    </main>
   )
 }
